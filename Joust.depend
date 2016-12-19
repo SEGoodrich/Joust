@@ -1,0 +1,36 @@
+# depslib dependency file v1.0
+1431413177 source:c:\users\spencer\documents\programs\practice\joust\j.cpp
+	<iostream>
+	<stdio.h>
+	<fstream>
+	<vector>
+	"Knight.h"
+
+1431413180 c:\users\spencer\documents\programs\practice\joust\knight.h
+	<iostream>
+	<vector>
+	"Weapon.h"
+
+1431413182 c:\users\spencer\documents\programs\practice\joust\weapon.h
+	<iostream>
+	"Random.h"
+
+1431413181 c:\users\spencer\documents\programs\practice\joust\random.h
+
+1431413179 source:c:\users\spencer\documents\programs\practice\joust\knight.cpp
+	"Knight.h"
+	"Weapon.h"
+	<vector>
+	<iostream>
+
+1431413181 source:c:\users\spencer\documents\programs\practice\joust\random.cpp
+	<iostream>
+	<cstdlib>
+	<cstddef>
+	<ctime>
+	"Random.h"
+
+1431413182 source:c:\users\spencer\documents\programs\practice\joust\weapon.cpp
+	"Weapon.h"
+	"Random.h"
+
