@@ -2,16 +2,19 @@
 #include<stdio.h>
 #include<fstream>
 #include<vector>
-#include"Knight.h"
 using namespace std;
 
+#include"Knight.h"
+
+
+// Clears screen
 void clear(){
 
   for( int i =0; i < 50; i++ ){
-
     cout << endl;
   }
 }
+
 
 Weapon* findWeapon( int wChoice, vector<Weapon> &Weapons ){
 
@@ -38,7 +41,7 @@ void download( vector<Knight> &Knights, vector<Weapon> &Weapons ){
   string file;
   ifstream winf, kinf;
 
-  bool kload, wload;
+  bool kload, wload;                      // Used to detect file read errors
 
   string name, wname;
   int stam;
@@ -48,6 +51,7 @@ void download( vector<Knight> &Knights, vector<Weapon> &Weapons ){
   kinf.open( file.c_str() );
   if( !kinf.is_open() ){
 
+    // Needs code to input knight values. As is, this is only used for error-checking
     cout << "\nBeg pardon m'lady--our scribes have forgotten the scroll of participants." << endl;
     cout << "They are being beheaded as we speak." << endl;
     cout << "However, we need warriors foolish enough to partake in the festivities today." << endl;
@@ -57,9 +61,9 @@ void download( vector<Knight> &Knights, vector<Weapon> &Weapons ){
     kload = false;
   }else{
 
+    //pushback loop
     while( !kinf.eof() ){
-
-      //pushback loop
+      
       getline(kinf, name, '|');
       kinf >> stam;
       kinf.ignore();
@@ -76,19 +80,20 @@ void download( vector<Knight> &Knights, vector<Weapon> &Weapons ){
   winf.open( file.c_str() );
   if( !winf.is_open() ){
 
-    cout << "\nBeg pardon m'lady--our scribes have forgotten the scroll of participants." << endl;
-    cout << "They are being beheaded as we speak." << endl;
-    cout << "However, we need warriors foolish enough to partake in the festivities today." << endl;
-    cout << "\nAny fool or knave will do, really." << endl;
-    cout << "(Please enter in at least two participants.)" << endl;
+    // Needs code to input weapon values. As is, this is only used for error-checking
+    cout << "\nBeg pardon m'lady--our squires have forgotten the rack of weapons." << endl;
+    cout << "They are being boiled as we speak." << endl;
+    cout << "However, we need weapons deadly enough to at least cause a nasty bruise." << endl;
+    cout << "\nAny object lying around will do." << endl;
+    cout << "(Please enter in at least one weapon.)" << endl;
 
     wload = false;
 
   }else{
 
+    //pushback loop
     while( !winf.eof() ){
 
-      //pushback loop
       getline(winf, wname, '|');
       winf >> wstam >> hit >> block;
       winf.ignore();
@@ -375,7 +380,7 @@ int main(){
     int rd_ct = 0;
 
 
-
+    // Joust loop
     do{
 
       ++rd_ct;
